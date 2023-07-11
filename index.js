@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./Utilities/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -41,6 +41,21 @@ const questions = [
         message: 'Choose a license for your project.',
         choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
     },
+    {
+        type: 'input',
+        name: 'projectGithub',
+        message: 'What is your GitHub username?',
+    },
+    {
+        type: 'input',
+        name: 'projectEmail',
+        message: 'What is your email address?',
+    },
+    {
+        type: 'confirm',
+        name: 'projectTOC',
+        message: 'Do you want a table of contents?',
+    }
 ];
 
 // TODO: Create a function to write README file
@@ -50,8 +65,27 @@ function writeToFile(fileName, data) {
     );
 }
 
+// When projectTOC is true, add a table of contents to the README
+function addTOC(data) {
+    if (data.projectTOC) {
+        return `## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [License](#license)
+* [Questions](#questions)`
+    } else {
+        return '';
+    }
+}
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((response) => {
+        const markdown = generateMarkdown(response);
+        writeToFile('README.md', markdown);
+    });
+}
 
 // Function call to initialize app
 init();
