@@ -66,19 +66,7 @@ function writeToFile(fileName, data) {
 }
 
 // When projectTOC is true, add a table of contents to the README
-function addTOC(data) {
-    if (data.projectTOC) {
-        return `## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [License](#license)
-* [Questions](#questions)`
-    } else {
-        return '';
-    }
-}
+
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((response) => {
