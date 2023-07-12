@@ -66,8 +66,6 @@ return  `## Titles
   ${renderLicenseLink(data.projectLicense)}
   ${renderLicenseSection(data.projectLicense)}
 
-  ## Table of Contents
-
   ${tableOfContents}
 
   ## License
@@ -100,9 +98,9 @@ return  `## Titles
 
   ## Project Information
 
-  ${data.projectGithub}
+ Github: ${data.projectGithub}
 
-  ${data.projectEmail}`;
+ Email:  ${data.projectEmail}`;
 }
 
 
