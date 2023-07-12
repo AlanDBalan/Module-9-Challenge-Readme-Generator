@@ -27,6 +27,8 @@
 
   When you run the index.js file, you will receive prompts. After filling out the prompts, it will generate a README.md file   
 
+  https://drive.google.com/file/d/1EWE7nrpRbv-QFe5HAMZ7D3M4BBL5BTeg/view
+
   ## Contributing
 
   N/A
@@ -35,6 +37,8 @@
 
   node index.js to see if it runs.
 
+  
+
   ## License
 
   None
@@ -42,5 +46,9 @@
   ## Project Information
 
  Github: AlanDBalan
+ Github repository link: https://github.com/AlanDBalan/Module-9-Challenge-Readme-Generator
+ 
+  ## Questions
 
+  If you have any questions about the project, contact me at
  Email:  4lanbalan@gmail.com
